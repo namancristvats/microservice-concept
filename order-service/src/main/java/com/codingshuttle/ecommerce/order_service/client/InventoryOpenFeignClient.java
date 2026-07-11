@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @FeignClient(name="inventory-service",path="/inventory")
 public interface InventoryOpenFeignClient {
-    @PutMapping("/reduce-stocks")
+    @PutMapping("/products/reduce-stocks")
     public Double reduceStocks(@RequestBody OrderRequestDto orderRequestDto);
 }

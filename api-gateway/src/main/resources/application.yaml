@@ -11,6 +11,10 @@ spring:
             - Path=/api/v1/orders/**
           filters:
             - StripPrefix=2
+            - name: LoggingOrdersFilter
+            - name: Authentication
+              args:
+                isEnabled: true
 
         - id: inventory-service
           uri: lb://INVENTORY-SERVICE
