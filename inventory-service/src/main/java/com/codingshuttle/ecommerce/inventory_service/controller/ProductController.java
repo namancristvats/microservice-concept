@@ -49,10 +49,10 @@ public class ProductController {
         return ResponseEntity.ok(inventory);
     }
 
-    @PutMapping("reduce-stocks")
-    public ResponseEntity<Double> reduceStocks(@RequestBody OrderRequestDto orderRequestDto) {
+    @PutMapping("/reduce-stocks")
+    public Double reduceStocks(@RequestBody OrderRequestDto orderRequestDto) {
         Double totalPrice = productService.reduceStocks(orderRequestDto);
-        return ResponseEntity.ok(totalPrice);
+        return totalPrice;
     }
 
 }
